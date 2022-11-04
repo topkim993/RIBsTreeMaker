@@ -107,7 +107,7 @@ private extension MainCommand {
         }
         let viewControllablers = extractViewController(from: edges)
         let hasViewController = viewControllablers.contains(targetName)
-        let suffix = hasViewController ? "" : "<<noView>>"
+        let suffix = hasViewController ? "<<Viewful>>" : "<<Viewless>>"
         print(indent + " " + targetName + suffix)
         
         for edge in edges {
@@ -125,17 +125,11 @@ private extension MainCommand {
         let style = """
         <style>
         mindmapDiagram {
-          . * {
-            BackGroundColor #FFF
-            LineColor #192f60
-            Shadowing 0.0
-            RoundCorner 20
-            LineThickness 2.0
+          .Viewful {
+            BackGroundColor #00c88b
           }
-          .noView * {
-            BackGroundColor #FFF
-            LineColor #d20b52
-            TextColor #d20b52
+          .Viewless {
+            BackGroundColor #d3d3d3
           }
         }
         </style>
