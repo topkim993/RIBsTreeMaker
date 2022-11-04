@@ -42,6 +42,7 @@ extension MainCommand: Command {
         showMindmapStyle()
         showRIBsTree(edges: edges, targetName: rootRIBName, count: 1)
         showFooter()
+        showPreviewWeb()
         
         return .success(message: "\nSuccessfully completed.".green.applyingStyle(.bold))
     }
@@ -144,6 +145,11 @@ private extension MainCommand {
     
     func showFooter() {
         print("@endmindmap")
+    }
+    
+    func showPreviewWeb() {
+        print("\n")
+        print("https://sujoyu.github.io/plantuml-previewer/")
     }
     
     func extractInteractable(from name: String) -> String? {
